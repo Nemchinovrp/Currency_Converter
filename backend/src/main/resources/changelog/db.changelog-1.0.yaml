@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: nemchin
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2
+      author: nemchin
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: username
+                  type: varchar(255)
+  - changeSet:
+      id: 3
+      author: nemchin
+      changes:
+        - createTable:
+            tableName: user_roles
+            columns:
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_id_users
+                    references: users(id)
+              - column:
+                  name: role_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_id_roles
+                    references: roles(id)
+
+

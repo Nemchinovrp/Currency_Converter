@@ -1,0 +1,100 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+
+    <changeSet id="1" author="Romario">
+        <insert tableName="hotel">
+            <column name="name" value="name"/>
+            <column name="description" value="description"/>
+        </insert>
+        <rollback/>
+    </changeSet>
+
+    <changeSet id="2" author="Romario">
+        <createTable schemaName="spring_db"
+                     tableName="address">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="id"/>
+            </column>
+            <column name="postal_code" type="nvarchar(256)"/>
+            <column name="country" type="nvarchar(256)"/>
+            <column name="country_iso_code" type="nvarchar(256)"/>
+            <column name="federal_district" type="nvarchar(256)"/>
+            <column name="region_fias_id" type="nvarchar(256)"/>
+            <column name="region_kladr_id" type="nvarchar(256)"/>
+            <column name="region_iso_code" type="nvarchar(256)"/>
+            <column name="region_with_type" type="nvarchar(256)"/>
+            <column name="region_type" type="nvarchar(256)"/>
+            <column name="region_type_full" type="nvarchar(256)"/>
+            <column name="region" type="nvarchar(256)"/>
+            <column name="area_fias_id" type="nvarchar(256)"/>
+            <column name="area_kladr_id" type="nvarchar(256)"/>
+            <column name="area_with_type" type="nvarchar(256)"/>
+            <column name="area_type" type="nvarchar(256)"/>
+            <column name="area_type_full" type="nvarchar(256)"/>
+            <column name="area" type="nvarchar(256)"/>
+            <column name="city_fias_id" type="nvarchar(256)"/>
+            <column name="city_kladr_id" type="nvarchar(256)"/>
+            <column name="city_with_type" type="nvarchar(256)"/>
+            <column name="city_type" type="nvarchar(256)"/>
+            <column name="city_type_full" type="nvarchar(256)"/>
+            <column name="city" type="nvarchar(256)"/>
+            <column name="city_area" type="nvarchar(256)"/>
+            <column name="city_district_fias_id" type="nvarchar(256)"/>
+            <column name="city_district_kladr_id" type="nvarchar(256)"/>
+            <column name="city_district_with_type" type="nvarchar(256)"/>
+            <column name="city_district_type" type="nvarchar(256)"/>
+            <column name="city_district_type_full" type="nvarchar(256)"/>
+            <column name="city_district" type="nvarchar(256)"/>
+            <column name="settlement_fias_id" type="nvarchar(256)"/>
+            <column name="settlement_kladr_id" type="nvarchar(256)"/>
+            <column name="settlement_with_type" type="nvarchar(256)"/>
+            <column name="settlement_type" type="nvarchar(256)"/>
+            <column name="settlement_type_full" type="nvarchar(256)"/>
+            <column name="settlement" type="nvarchar(256)"/>
+            <column name="street_fias_id" type="nvarchar(256)"/>
+            <column name="street_kladr_id" type="nvarchar(256)"/>
+            <column name="street_with_type" type="nvarchar(256)"/>
+            <column name="street_type" type="nvarchar(256)"/>
+            <column name="street_type_full" type="nvarchar(256)"/>
+            <column name="street" type="nvarchar(256)"/>
+            <column name="house_fias_id" type="nvarchar(256)"/>
+            <column name="house_kladr_id" type="nvarchar(256)"/>
+            <column name="house_type" type="nvarchar(256)"/>
+            <column name="house_type_full" type="nvarchar(256)"/>
+            <column name="house" type="nvarchar(256)"/>
+            <column name="block_type" type="nvarchar(256)"/>
+            <column name="block_type_full" type="nvarchar(256)"/>
+            <column name="block" type="nvarchar(256)"/>
+            <column name="flat_type" type="nvarchar(256)"/>
+            <column name="flat_type_full" type="nvarchar(256)"/>
+            <column name="flat" type="nvarchar(256)"/>
+            <column name="flat_area" type="nvarchar(256)"/>
+            <column name="square_meter_price" type="nvarchar(256)"/>
+            <column name="flat_price" type="nvarchar(256)"/>
+            <column name="postal_box" type="nvarchar(256)"/>
+            <column name="fias_id" type="nvarchar(256)"/>
+            <column name="fias_code" type="nvarchar(256)"/>
+            <column name="fias_level" type="nvarchar(256)"/>
+            <column name="fias_actuality_state" type="nvarchar(256)"/>
+            <column name="kladr_id" type="nvarchar(256)"/>
+            <column name="geoname_id" type="nvarchar(256)"/>
+            <column name="capital_marker" type="nvarchar(256)"/>
+            <column name="okato" type="nvarchar(256)"/>
+            <column name="oktmo" type="nvarchar(256)"/>
+            <column name="tax_office" type="nvarchar(256)"/>
+            <column name="tax_office_legal" type="nvarchar(256)"/>
+            <column name="geo_lat" type="double"/>
+            <column name="geo_lon" type="double"/>
+            <column name="beltway_hit" type="nvarchar(256)"/>
+            <column name="beltway_distance" type="double"/>
+            <column name="qc_geo" type="nvarchar(256)"/>
+            <column name="qc_complete" type="nvarchar(256)"/>
+            <column name="qc_house" type="nvarchar(256)"/>
+            <column name="unparsed_parts" type="nvarchar(256)"/>
+            <column name="source" type="nvarchar(256)"/>
+            <column name="qc" type="nvarchar(256)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

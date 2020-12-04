@@ -64,6 +64,11 @@
 			<version>1.18.16</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>4.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
