@@ -1,4 +1,4 @@
-package com.nemchin.springjwt.models;
+package com.nemchin.springjwt.model;
 
 import lombok.Data;
 

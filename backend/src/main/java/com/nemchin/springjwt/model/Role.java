@@ -1,4 +1,4 @@
-package com.nemchin.springjwt.models;
+package com.nemchin.springjwt.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +16,6 @@ public class Role {
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
-	private ERole name;
+	private EnumRole name;
 
-
-	public Role(ERole name) {
-		this.name = name;
-	}
 }
