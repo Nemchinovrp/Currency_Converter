@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,24 +33,17 @@ import com.nemchin.springjwt.repository.UserRepository;
 import com.nemchin.springjwt.security.jwt.JwtUtils;
 import com.nemchin.springjwt.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AuthController {
-	@Autowired
-	AuthenticationManager authenticationManager;
-
-	@Autowired
-	UserRepository userRepository;
-
-	@Autowired
-	RoleRepository roleRepository;
-
-	@Autowired
-	PasswordEncoder encoder;
-
-	@Autowired
-	JwtUtils jwtUtils;
+	private final AuthenticationManager authenticationManager;
+	private final UserRepository userRepository;
+	private final RoleRepository roleRepository;
+	private final PasswordEncoder encoder;
+	private final JwtUtils jwtUtils;
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -59,16 +53,16 @@ public class AuthController {
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
-		
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
+
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 		List<String> roles = userDetails.getAuthorities().stream()
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
 
-		return ResponseEntity.ok(new JwtResponse(jwt, 
-												 userDetails.getId(), 
-												 userDetails.getUsername(), 
-												 userDetails.getEmail(), 
+		return ResponseEntity.ok(new JwtResponse(jwt,
+												 userDetails.getId(),
+												 userDetails.getUsername(),
+												 userDetails.getEmail(),
 												 roles));
 	}
 
@@ -87,7 +81,7 @@ public class AuthController {
 		}
 
 		// Create new user's account
-		User user = new User(signUpRequest.getUsername(), 
+		User user = new User(signUpRequest.getUsername(),
 							 signUpRequest.getEmail(),
 							 encoder.encode(signUpRequest.getPassword()));
 
