@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: nemchin
+      changes:
+        - createTable:
+            tableName: valute
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+              - column:
+                  name: id_valute
+                  type: varchar(255)
+              - column:
+                  name: char_code
+                  type: varchar(255)
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: value
+                  type: varchar(255)
+              - column:
+                  name: nominal
+                  type: varchar(255)
+
+
+
