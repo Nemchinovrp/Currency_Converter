@@ -1,4 +1,4 @@
-package com.nemchin.springjwt.security.services;
+package com.nemchin.springjwt.service;
 
 import com.nemchin.springjwt.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,7 @@
-package com.nemchin.springjwt.security.jwt;
+package com.nemchin.springjwt.service;
 
 import java.util.Date;
 
-import com.nemchin.springjwt.security.services.UserDetailsImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

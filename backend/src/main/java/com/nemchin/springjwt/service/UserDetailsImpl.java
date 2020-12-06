@@ -1,4 +1,4 @@
-package com.nemchin.springjwt.security.services;
+package com.nemchin.springjwt.service;
 
 import java.util.Collection;
 import java.util.List;

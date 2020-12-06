@@ -30,8 +30,8 @@ import com.nemchin.springjwt.dto.JwtResponse;
 import com.nemchin.springjwt.dto.MessageResponse;
 import com.nemchin.springjwt.repository.RoleRepository;
 import com.nemchin.springjwt.repository.UserRepository;
-import com.nemchin.springjwt.security.jwt.JwtUtils;
-import com.nemchin.springjwt.security.services.UserDetailsImpl;
+import com.nemchin.springjwt.service.JwtUtils;
+import com.nemchin.springjwt.service.UserDetailsImpl;
 
 
 @RestController

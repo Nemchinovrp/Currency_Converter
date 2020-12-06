@@ -1,8 +1,8 @@
-package com.nemchin.springjwt.security;
+package com.nemchin.springjwt.config;
 
-import com.nemchin.springjwt.security.jwt.AuthEntryPointJwt;
-import com.nemchin.springjwt.security.jwt.AuthTokenFilter;
-import com.nemchin.springjwt.security.services.UserDetailsServiceImpl;
+import com.nemchin.springjwt.service.AuthEntryPointJwt;
+import com.nemchin.springjwt.service.AuthTokenFilter;
+import com.nemchin.springjwt.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

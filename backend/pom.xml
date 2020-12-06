@@ -77,30 +77,30 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>2.5.0</version>
-				<executions>
-					<execution>
-						<phase>generate-resources</phase>
-						<id>xjc</id>
-						<goals>
-							<goal>xjc</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<sourceType>wsdl</sourceType>
-					<sources>
-						<source>${project.basedir}/src/main/resources/wsdl</source>
-					</sources>
-					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-					<clearOutputDir>false</clearOutputDir>
-					<packageName>com.nemchin.springjwt.generated</packageName>
-					<noPackageLevelAnnotations>true</noPackageLevelAnnotations>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.codehaus.mojo</groupId>-->
+<!--				<artifactId>jaxb2-maven-plugin</artifactId>-->
+<!--				<version>2.5.0</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>generate-resources</phase>-->
+<!--						<id>xjc</id>-->
+<!--						<goals>-->
+<!--							<goal>xjc</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<configuration>-->
+<!--					<sourceType>wsdl</sourceType>-->
+<!--					<sources>-->
+<!--						<source>${project.basedir}/src/main/resources/wsdl</source>-->
+<!--					</sources>-->
+<!--					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>-->
+<!--					<clearOutputDir>false</clearOutputDir>-->
+<!--					<packageName>com.nemchin.springjwt.generated</packageName>-->
+<!--					<noPackageLevelAnnotations>true</noPackageLevelAnnotations>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 

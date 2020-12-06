@@ -1,4 +1,4 @@
-package com.nemchin.springjwt.security.jwt;
+package com.nemchin.springjwt.service;
 
 import java.io.IOException;
 
