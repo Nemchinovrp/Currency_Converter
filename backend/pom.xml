@@ -97,7 +97,7 @@
 					</sources>
 					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
-					<packageName>com.project.generated</packageName>
+					<packageName>com.nemchin.springjwt.generated</packageName>
 					<noPackageLevelAnnotations>true</noPackageLevelAnnotations>
 				</configuration>
 			</plugin>
