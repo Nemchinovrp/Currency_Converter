@@ -14,10 +14,20 @@ public class Valute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Temporal(TemporalType.DATE)
     private Date date;
     private String idValute;
     private String charCode;
     private String name;
     private String value;
     private String nominal;
+
+    public Valute(Date date, String idValute, String charCode, String name, String value, String nominal) {
+        this.date = date;
+        this.idValute = idValute;
+        this.charCode = charCode;
+        this.name = name;
+        this.value = value;
+        this.nominal = nominal;
+    }
 }

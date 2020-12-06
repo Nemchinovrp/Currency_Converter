@@ -7,15 +7,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RestTemplateService {
     private final RestTemplate restTemplate;
 
-    public String test() {
-        String url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=05/03/2019";
+    public ValCurs getValutesFromCbr(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
+        String dateString = dateFormat.format(new Date());
+        String url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=" + dateString;
         ResponseEntity<ValCurs> response = restTemplate.postForEntity(url, null, ValCurs.class);
-        System.out.println(response.toString());
-        return response.toString();
+        return response.getBody();
     }
 }
