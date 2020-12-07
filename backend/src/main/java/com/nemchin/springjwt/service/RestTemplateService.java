@@ -15,7 +15,7 @@ import java.util.Date;
 public class RestTemplateService {
     private final RestTemplate restTemplate;
 
-    public ValCurs getValutesFromCbr(Date date) {
+    public ValCurs getValutesFromCbr() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
         String dateString = dateFormat.format(new Date());
         String url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=" + dateString;

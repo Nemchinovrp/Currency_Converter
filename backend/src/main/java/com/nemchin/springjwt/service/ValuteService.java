@@ -19,8 +19,11 @@ public class ValuteService {
 
     public boolean saveValute(ValCurs valCurs) throws ParseException {
         List<Valute> valutes = valuteMapper.valueCursToValute(valCurs);
-        valutes.forEach(System.out::println);
         List<Valute> savedСurrencies = valuteRepository.saveAll(valutes);
         return !savedСurrencies.isEmpty();
+    }
+
+    public List<Valute> getLastValutes() {
+        return valuteRepository.getLastValutes();
     }
 }

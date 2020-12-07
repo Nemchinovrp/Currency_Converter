@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,5 +24,11 @@ public class ValuteMapper {
             valutes.add(new Valute(date, val.getID(), val.getCharCode(), val.getName(), val.getValue(), Long.toString(val.getNominal())));
         });
         return valutes;
+    }
+
+    public LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
     }
 }

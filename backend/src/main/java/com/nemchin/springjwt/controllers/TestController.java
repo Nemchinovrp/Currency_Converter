@@ -1,6 +1,7 @@
 package com.nemchin.springjwt.controllers;
 
 import com.nemchin.springjwt.generated.ValCurs;
+import com.nemchin.springjwt.repository.ValuteRepository;
 import com.nemchin.springjwt.service.RestTemplateService;
 import com.nemchin.springjwt.service.ValuteService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
-import java.util.Date;
 
 @RestController
 @RequestMapping("/api/test")
@@ -21,16 +21,17 @@ import java.util.Date;
 public class TestController {
     private final ValuteService valuteService;
     private final RestTemplateService restTemplateService;
+    private final ValuteRepository valuteRepository;
 
 
     @GetMapping("/all")
-    public String allAccess() {
-        return "Public Content.";
+    public int allAccess() {
+        return valuteRepository.getLastValutes().size();
     }
 
     @GetMapping("/rest_template")
     public boolean restTemplate() throws ParseException {
-        ValCurs valutesFromCbr = restTemplateService.getValutesFromCbr(new Date());
+        ValCurs valutesFromCbr = restTemplateService.getValutesFromCbr();
         return valuteService.saveValute(valutesFromCbr);
     }
 
