@@ -5,12 +5,14 @@ import com.nemchin.springjwt.mapper.ValuteMapper;
 import com.nemchin.springjwt.model.Valute;
 import com.nemchin.springjwt.repository.ValuteRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ValuteService {

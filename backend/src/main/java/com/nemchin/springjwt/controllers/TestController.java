@@ -1,6 +1,7 @@
 package com.nemchin.springjwt.controllers;
 
 import com.nemchin.springjwt.generated.ValCurs;
+import com.nemchin.springjwt.model.Valute;
 import com.nemchin.springjwt.repository.ValuteRepository;
 import com.nemchin.springjwt.service.RestTemplateService;
 import com.nemchin.springjwt.service.ValuteService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/test")
@@ -25,8 +27,9 @@ public class TestController {
 
 
     @GetMapping("/all")
-    public int allAccess() {
-        return valuteRepository.getLastValutes().size();
+    public List<Valute> allAccess() {
+        List<Valute> valutes = valuteRepository.getLastValutes();
+        return valutes;
     }
 
     @GetMapping("/rest_template")
