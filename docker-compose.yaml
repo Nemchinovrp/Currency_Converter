@@ -29,7 +29,7 @@ services:
     hostname: backend
 
   frontend:
-    image: nemchinovrp/angular-10-jwt-auth:0.0.1
+    image: nemchinovrp/angular-10-jwt-auth:0.0.3
     restart: always
     ports:
       - 80:80
