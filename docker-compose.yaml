@@ -15,7 +15,7 @@ services:
       - backend_network
 
   backend:
-    image: nemchinovrp/spring-boot-security-jwt:0.0.5
+    image: nemchinovrp/spring-boot-security-jwt:0.0.6
     restart: always
     ports:
       - 8888:8080
@@ -25,7 +25,18 @@ services:
       - db
     networks:
       - backend_network
+      - frontend_network
+    hostname: backend
 
+  frontend:
+    image: nemchinovrp/angular-10-jwt-auth:0.0.1
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    networks:
+      - frontend_network
 
 # Networks to be created to facilitate communication between containers
 networks:
