@@ -101,3 +101,13 @@ INSERT INTO roles(name) VALUES('ROLE_USER');
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
 INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 ```
+
+Сборка образа - "docker build -t spring-boot-security-jwt ." 
+
+Запуск образа - "docker run -p 8080:8080 spring-boot-security-jwt"
+
+docker login
+
+docker tag c89b6dc0f7e5 nemchinovrp/spring-boot-security-jwt:0.0.1
+
+docker push nemchinovrp/spring-boot-security-jwt
